@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.turalllb.adapterdelegates.adapter.ComponentAdapter
+import com.turalllb.adapterdelegates.adapter.MoveAdapterDelegate
 import com.turalllb.adapterdelegates.entity.Component
 import com.turalllb.adapterdelegates.entity.Event
 import com.turalllb.adapterdelegates.entity.Move
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         rv.layoutManager = LinearLayoutManager(this)
         adapter = ComponentAdapter(this, getData())
         rv.adapter = adapter
+        adapter.addComponent(MoveAdapterDelegate(this))
 
     }
 
